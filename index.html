@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./public/style.css">
 </head>
 
 <body>
@@ -16,21 +16,52 @@
 
 
 
-    <ul id="pickType">
-        <label class="hvr sq" for="URL"><input type="radio" name="type" id="URL" class="type"
-                checked>URL</input></label>
-        <label class="hvr sq" for="TEXTAREA"><input type="radio" name="type" id="TEXTAREA"
-                class="type">Text</input></label>
-        <label class="hvr sq" for="VCD"><input type="radio" name="type" id="VCD" class="type">Vcard</input></label>
-        <label class="hvr sq" for="EVENT"><input type="radio" name="type" id="EVENT" class="type">Event</input></label>
-        <label class="hvr sq" for="WIFI"><input type="radio" name="type" id="WIFI" class="type">WiFi</input></label>
-    </ul>
+    
 
 
     <!-- MAIN SCREEN -->
     <main>
 
         <div class="col left">
+
+            <ul id="pickType">
+                <label class="hvr sq" for="URL"><input type="radio" name="type" id="URL" class="type"
+                        checked>URL</input></label>
+                <label class="hvr sq" for="TEXTAREA"><input type="radio" name="type" id="TEXTAREA"
+                        class="type">Text</input></label>
+                <label class="hvr sq" for="VCD"><input type="radio" name="type" id="VCD" class="type">Vcard</input></label>
+                <label class="hvr sq" for="EVENT"><input type="radio" name="type" id="EVENT" class="type">Event</input></label>
+                <label class="hvr sq" for="WIFI"><input type="radio" name="type" id="WIFI" class="type">WiFi</input></label>
+            </ul>
+
+            <div>
+                <tr>
+                    <td>
+                        <input type="text" id="picUrl" placeholder="image location (url)">
+                        <span class="lbl">image on the web</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="picUp">
+                            <input type="file" id="picUp">
+                        </label>
+    
+                        <button id="picUploadReset">reset uploaded image</button>
+                    </td>
+                </tr>
+            </div>
+
+            <div>
+<input title="bg color" type="color" id="background" value="#ffffff" aria-label="background color">
+<span class="lbl">background</span>
+<input title="data color" type="color" id="dataColor" value="#000000" aria-label="data color">
+<span class="lbl">data</span>
+<input title="corner border color" type="color" id="cornerColor" value="#000000" aria-label="corner border color">
+<span class="lbl">corner border</span>
+<input title="corner dot color" type="color" id="dotColor" value="#000000" aria-label="corner dot color">
+<span class="lbl">corner dots</span>
+            </div>
 
             <!-- MODAL ------- URL -->
             <div id="modal-URL" class="modal qr-type">
@@ -125,34 +156,7 @@
                 </table>
             </div>
 
-            <div>
-                <tr>
-                    <td>
-                        <input type="text" id="picUrl" placeholder="image location (url)">
-                        <span class="lbl">image on the web</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="picUp">
-                            <input type="file" id="picUp">
-                        </label>
-    
-                        <button id="picUploadReset">reset uploaded image</button>
-                    </td>
-                </tr>
-            </div>
-
-            <div>
-<input title="bg color" type="color" id="background" value="#ffffff" aria-label="background color">
-<span class="lbl">background</span>
-<input title="data color" type="color" id="dataColor" value="#000000" aria-label="data color">
-<span class="lbl">data</span>
-<input title="corner border color" type="color" id="cornerColor" value="#000000" aria-label="corner border color">
-<span class="lbl">corner border</span>
-<input title="corner dot color" type="color" id="dotColor" value="#000000" aria-label="corner dot color">
-<span class="lbl">corner dots</span>
-            </div>
+            
 
         </div>
 
@@ -287,7 +291,6 @@
 
 
 
-    <script src="./style.js"></script>
     <script src="./script.js"></script>
     <!-- <script src="./cursor.js"></script> -->
 </body>

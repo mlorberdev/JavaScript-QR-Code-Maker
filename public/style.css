@@ -84,14 +84,6 @@ input[type=color] {
     padding:0;
 }
 
-#pickType {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100vw;
-    display:flex;
-    z-index: 10;
-}
 #pickType > label {
     padding: 20px;
 }
