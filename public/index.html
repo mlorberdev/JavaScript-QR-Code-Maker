@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- UPLOADED IMG -->
+    <img id="pic" class="hide" src="">
+
+
+
+    <ul id="pickType">
+        <label class="hvr sq" for="URL"><input type="radio" name="type" id="URL" class="type"
+                checked>URL</input></label>
+        <label class="hvr sq" for="TEXTAREA"><input type="radio" name="type" id="TEXTAREA"
+                class="type">Text</input></label>
+        <label class="hvr sq" for="VCD"><input type="radio" name="type" id="VCD" class="type">Vcard</input></label>
+        <label class="hvr sq" for="EVENT"><input type="radio" name="type" id="EVENT" class="type">Event</input></label>
+        <label class="hvr sq" for="WIFI"><input type="radio" name="type" id="WIFI" class="type">WiFi</input></label>
+    </ul>
+
+
+    <!-- MAIN SCREEN -->
+    <main>
+
+        <div class="col left">
+
+            <!-- MODAL ------- URL -->
+            <div id="modal-URL" class="modal qr-type">
+                <input type="url" id="content" placeholder="Enter URL to encode" class="hvr sq">
+            </div>
+
+            <!-- MODAL ------- TEXTAREA -->
+            <div id="modal-TEXTAREA" class="modal qr-type hide">
+                <textarea id="content-textarea" class="hvr sq" rows="20" cols="60" width="400px"
+                    placeholder="Enter text to encode"></textarea>
+            </div>
+
+            <!-- MODAL ------- VCARD -->
+            <div id="modal-VCD" class="modal qr-type hide">
+                <table>
+                    <tr>
+                        <td><input type="text" id="fullName" placeholder="Name" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="company" placeholder="Company" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="title" placeholder="Title" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="tel" id="phone" placeholder="Phone" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="email" id="email" placeholder="Email" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="url" id="notes" placeholder="Notes" class="img-light"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- MODAL ------- EVENT -->
+            <div id="modal-EVENT" class="modal qr-type hide">
+
+                <table>
+                    <tr>
+                        <td colspan="2"><input type="text" id="summary" placeholder="title of event"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" id="description" placeholder="description of event"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" id="location" placeholder="location of event"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="date" id="datestart" aria-label="date start"></td>
+                        <td><input type="time" step="60" id="timestart" aria-label="time start"></td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="date" id="dateend" aria-label="date end"></td>
+                        <td><input type="time" step="60" id="timeend" aria-label="time end"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <!-- MODAL ------- WIFI -->
+            <div id="modal-WIFI" class="modal qr-type hide">
+                <table>
+                    <tr>
+                        <td><input type="text" id="ssid" placeholder="network name | SSID" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="password" placeholder="password" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="encryption" title="encryption" aria-label="encryption">
+                                <option value="WPA" selected>WPA</option>
+                                <option value="WPA2">WPA2</option>
+                                <option value="WEP">WEP</option>
+                                <option value="NONE">none</option>
+                            </select>
+                            <span class="lbl">encryption</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="hidden" title="hidden" aria-label="hidden">
+                                <option value="1">true</option>
+                                <option value="0" selected>false</option>
+                            </select>
+                            <span class="lbl">hidden</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <tr>
+                    <td>
+                        <input type="text" id="picUrl" placeholder="image location (url)">
+                        <span class="lbl">image on the web</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="picUp">
+                            <input type="file" id="picUp">
+                        </label>
+    
+                        <button id="picUploadReset">reset uploaded image</button>
+                    </td>
+                </tr>
+            </div>
+
+            <div>
+<input title="bg color" type="color" id="background" value="#ffffff" aria-label="background color">
+<span class="lbl">background</span>
+<input title="data color" type="color" id="dataColor" value="#000000" aria-label="data color">
+<span class="lbl">data</span>
+<input title="corner border color" type="color" id="cornerColor" value="#000000" aria-label="corner border color">
+<span class="lbl">corner border</span>
+<input title="corner dot color" type="color" id="dotColor" value="#000000" aria-label="corner dot color">
+<span class="lbl">corner dots</span>
+            </div>
+
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="col ctr">
+            <div id="modal-SET" class="">
+                <table>
+                    
+                    <tr>
+                        <td>
+                            <input title="size" type="text" id="imgSize" value="1">
+                            <span class="lbl">image scale > 0.1</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input title="inner margin" type="text" id="imgMargin" value="0">
+                            <span class="lbl">image margin</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input title="outer margin" type="text" id="qrMargin" value="0">
+                            <span class="lbl">qr margin</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input title="qr type number" type="text" id="typeNumber" value="0">
+                            <span class="lbl">qr type (auto by default)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="backgroundData" title="hide background data" aria-label="hide background data">
+                                <option value="1" selected>true</option>
+                                <option value="0">false</option>
+                            </select>
+                            <span class="lbl">hide data behind image</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="errorCorrection" title="error correction" aria-label="error correction">
+                                <option value="H">30% high</option>
+                                <option value="Q">25% quartile</option>
+                                <option value="M" selected>15% medium</option>
+                                <option value="L">7% low</option>
+                            </select>
+                            <span class="lbl">error correction</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="dataChoices" title="data appearance" aria-label="data appearance">
+                                <option value="square">square</option>
+                                <option value="rounded">rounded</option>
+                                <option value="dots" selected>circle</option>
+                                <option value="extra-rounded">xtra-rounded</option>
+                            </select>
+                            <span class="lbl">data appearance</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="cornerChoices" title="dot borders" aria-label="dot borders">
+                                <option value="square">square</option>
+                                <option value="dot" selected>circle</option>
+                                <option value="extra-rounded">rounded</option>
+                            </select>
+                            <span class="lbl">corner border</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="dotChoices" title="corner dots" aria-label="corner dots">
+                                <option value="square">square</option>
+                                <option value="dot" selected>round</option>
+                            </select>
+                            <span class="lbl">corner dot</span>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input title="code length and width in pixels" type="text" id="QRdimensions" value="288">
+                            <span class="lbl">dimension in px (288 px = 3 in)</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="right">
+            <!-- MODAL ------- QR CODE -->
+            <div>
+                <div>
+                    <label for="isBGtransparent">transparent background</label>
+                    <input id="isBGtransparent" type="checkbox">
+                </div>
+                <div id="modal-QRC">
+
+                    <div id="canvas" alt="QR code frame"></div>
+                </div>
+
+                <!-- CREATE AND DOWNLOAD -->
+
+                <button class="btn constructor-clear" aria-label="click to add data to the qr" id="data">create /
+                    refresh</button>
+
+
+                <tr>
+                    <div>
+                        <select id="extension" title="file type" aria-label="download file type">
+                            <option value="png" selected>png</option>
+                            <option value="jpeg">jpeg</option>
+                            <option value="webp">webp</option>
+                            <option value="svg">svg</option>
+                            <option value="gif">gif</option>
+                        </select>
+                        <label for="extension" class="lbl">&nbsp&nbspdownload type</label>
+                    </div>
+                </tr>
+
+                <button id="download" aria-label="download">download</button>
+            </div>
+
+
+
+
+        </div>
+    </main>
+
+
+
+    <script src="./style.js"></script>
+    <script src="./script.js"></script>
+    <!-- <script src="./cursor.js"></script> -->
+</body>
+
+</html>
