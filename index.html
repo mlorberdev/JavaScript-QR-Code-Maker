@@ -14,54 +14,70 @@
     <!-- UPLOADED IMG -->
     <img id="pic" class="hide" src="">
 
-
-
-    
-
+    <!-- CHOOSE TYPE -->
+    <ul id="pickType">
+        <li>
+            <input type="radio" name="type" id="URL" class="type" checked></input>
+            <label class="which" for="URL">URL</label>
+        </li>
+        <li>
+            <input type="radio" name="type" id="TEXTAREA" class="type"></input>
+            <label class="which" for="TEXTAREA">Text</label>
+        </li>
+        <li>
+            <input type="radio" name="type" id="VCD" class="type"></input>
+            <label class="which" for="VCD">Vcard</label>
+        </li>
+        <li>
+            <input type="radio" name="type" id="EVENT" class="type"></input>
+            <label class="which" for="EVENT">Event</label>
+        </li>
+        <li>
+            <input type="radio" name="type" id="WIFI" class="type"></input>
+            <label class="which" for="WIFI">WiFi</label>
+        </li>
+    </ul>
 
     <!-- MAIN SCREEN -->
     <main>
 
+        <!-- QR CODE WRAPPER -->
+        <article id="qr-wrap">
+            <div>
+                <div>
+                    <label for="isBGtransparent">transparent background</label>
+                    <input id="isBGtransparent" type="checkbox">
+                </div>
+                <div id="modal-QRC">
+
+                    <div id="canvas" alt="QR code frame"></div>
+                </div>
+
+                <!-- CREATE AND DOWNLOAD -->
+
+                <button class="btn constructor-clear" aria-label="click to add data to the qr" id="data">create /
+                    refresh</button>
+
+
+                <tr>
+                    <div>
+                        <select id="extension" title="file type" aria-label="download file type">
+                            <option value="png" selected>png</option>
+                            <option value="jpeg">jpeg</option>
+                            <option value="webp">webp</option>
+                            <option value="svg">svg</option>
+                            <option value="gif">gif</option>
+                            <option value="eps">eps</option>
+                        </select>
+                        <label for="extension" class="lbl">&nbsp&nbspdownload type</label>
+                    </div>
+                </tr>
+
+                <button id="download" aria-label="download">download</button>
+            </div>
+        </article>
+
         <div class="col left">
-
-            <ul id="pickType">
-                <label class="hvr sq" for="URL"><input type="radio" name="type" id="URL" class="type"
-                        checked>URL</input></label>
-                <label class="hvr sq" for="TEXTAREA"><input type="radio" name="type" id="TEXTAREA"
-                        class="type">Text</input></label>
-                <label class="hvr sq" for="VCD"><input type="radio" name="type" id="VCD" class="type">Vcard</input></label>
-                <label class="hvr sq" for="EVENT"><input type="radio" name="type" id="EVENT" class="type">Event</input></label>
-                <label class="hvr sq" for="WIFI"><input type="radio" name="type" id="WIFI" class="type">WiFi</input></label>
-            </ul>
-
-            <div>
-                <tr>
-                    <td>
-                        <input type="text" id="picUrl" placeholder="image location (url)">
-                        <span class="lbl">image on the web</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="picUp">
-                            <input type="file" id="picUp">
-                        </label>
-    
-                        <button id="picUploadReset">reset uploaded image</button>
-                    </td>
-                </tr>
-            </div>
-
-            <div>
-<input title="bg color" type="color" id="background" value="#ffffff" aria-label="background color">
-<span class="lbl">background</span>
-<input title="data color" type="color" id="dataColor" value="#000000" aria-label="data color">
-<span class="lbl">data</span>
-<input title="corner border color" type="color" id="cornerColor" value="#000000" aria-label="corner border color">
-<span class="lbl">corner border</span>
-<input title="corner dot color" type="color" id="dotColor" value="#000000" aria-label="corner dot color">
-<span class="lbl">corner dots</span>
-            </div>
 
             <!-- MODAL ------- URL -->
             <div id="modal-URL" class="modal qr-type">
@@ -156,15 +172,47 @@
                 </table>
             </div>
 
-            
+
 
         </div>
 
         <!-- SETTINGS -->
-        <div class="col ctr">
+        <div class="col right">
+            
             <div id="modal-SET" class="">
+
                 <table>
-                    
+                    <div>
+                        <tr>
+                            <td>
+                                <input type="text" id="picUrl" placeholder="image location (url)">
+                                <span class="lbl">image on the web</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="picUp">
+                                    <input type="file" id="picUp">
+                                </label>
+        
+                                <button id="picUploadReset">reset uploaded image</button>
+                            </td>
+                        </tr>
+                    </div>
+        
+                    <div>
+                        <input title="bg color" type="color" id="background" value="#ffffff" aria-label="background color">
+                        <span class="lbl">background</span>
+                        <input title="data color" type="color" id="dataColor" value="#000000" aria-label="data color">
+                        <span class="lbl">data</span>
+                        <input title="corner border color" type="color" id="cornerColor" value="#000000"
+                            aria-label="corner border color">
+                        <span class="lbl">corner border</span>
+                        <input title="corner dot color" type="color" id="dotColor" value="#000000"
+                            aria-label="corner dot color">
+                        <span class="lbl">corner dots</span>
+                    </div>
+
                     <tr>
                         <td>
                             <input title="size" type="text" id="imgSize" value="1">
@@ -238,7 +286,7 @@
                             <span class="lbl">corner dot</span>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <input title="code length and width in pixels" type="text" id="QRdimensions" value="288">
@@ -249,44 +297,6 @@
             </div>
         </div>
 
-        <div class="right">
-            <!-- MODAL ------- QR CODE -->
-            <div>
-                <div>
-                    <label for="isBGtransparent">transparent background</label>
-                    <input id="isBGtransparent" type="checkbox">
-                </div>
-                <div id="modal-QRC">
-
-                    <div id="canvas" alt="QR code frame"></div>
-                </div>
-
-                <!-- CREATE AND DOWNLOAD -->
-
-                <button class="btn constructor-clear" aria-label="click to add data to the qr" id="data">create /
-                    refresh</button>
-
-
-                <tr>
-                    <div>
-                        <select id="extension" title="file type" aria-label="download file type">
-                            <option value="png" selected>png</option>
-                            <option value="jpeg">jpeg</option>
-                            <option value="webp">webp</option>
-                            <option value="svg">svg</option>
-                            <option value="gif">gif</option>
-                        </select>
-                        <label for="extension" class="lbl">&nbsp&nbspdownload type</label>
-                    </div>
-                </tr>
-
-                <button id="download" aria-label="download">download</button>
-            </div>
-
-
-
-
-        </div>
     </main>
 
 
