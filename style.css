@@ -1,0 +1,137 @@
+* {
+    font-family: mont, sans-serif;
+}
+
+body {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    z-index:0;
+    background:transparent url(data:image/webp;base64,UklGRiAGAABXRUJQVlA4WAoAAAAwAAAAOwAANwAASUNDUBgCAAAAAAIYAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANkFMUEgQAAAAAQfQmYgIAAnh/3stov+pD1ZQOCDKAwAAEBIAnQEqPAA4AD5tMpRIJCKhoSYVWxCADYlpABIB3sOtCuFdj/8flhA6GQdJy5Ke039/6N32GgeP/bBwtGaccv7MNLgSZj7K1pk2MfZ+3pJCn0C6Ha4lkxIIl7tdcGqEsF2uR0EaM7IMvwcdV9phGdWr4ZJMwauTddPlr0tYjBHAmHQ0eA282SXpreBFqm+B8gcXz+jZa8QAAP79pl8bmVkv54mXUVMUFzll5bwXaZpDa59nK+ImJaFPduhDFTJxGADmdP1nreNAwgge5ZGjg5I9q72L3Haddf5e2GPojwygbCC+/eDUSM6PP5SG7SwaQfPZ6qidEP6u/sW3YwVeiay7uQ7ConsaPHC+d3L4tje3vM+Tpun4OlHtLzZ8Ilyous3c3AOYB2RuHSXLrRARH8389rGWZaTvg89W4bLztc4xLJZ/zgMwOpKB3RT8qa6ERjZupM7fNM58VZLXlO7217UHMs3xujC00R3TMb5yyWCEVpjNGRcsuuTuODoByzO+cbI0q9iLuL6kD0+gM6u2wj2SsPy/+N4N0+87ZqTtjFcvZQPlahDJfjooW7vNox+rzM9DZPVtTwGV8WBCdf8exo22ELvqbakstXo5eBz7S/AyKc+M9gFJgjxr8AzI60vvmE5RCcwEFux6jiryaBBHXk/pFOYmyGOyVoK6v9vC3RvA1Q7I/JnCKAZ+aZfL40LEAEXukKlmafhDmLtXK+ZzPr4wzb5Rsk8Pny5drtGZrxJG3U73UKKh8OvISXw9/3aulni6hb0icTUW/M5Wkeyb044rv+6Q1mcFwrfuJDrPt9PP1HCeZfA12eqOdaDuk0stZrR5IRWb20SHzZo8ipS7tvGa7NAaRmPB3ulaBaj3pVb7SE0m+tiLo2yLvD61aV2XSa/FCsRLcUGGDMNcZicSGHlAzycdu4MG+f07arduYmT5qL0ZE/tS6uk/HSzptu883vWONjzyOdLRHAOEgtWtOwatXqmgkqmwvxl0dMrVwDhZ8NMpqvJk9GX6GBlPXG4O5lAIqzdpgntqQRcI9smrZUSRfm+QOLe5h5cAsOlcqm1bi+DHj2dw3yaoNZsypEnYd/Rh1jwSqrrb0K8etvoccy3bcBN9pq+28Fkg/RlQBohI4L5Ji80aPpJRaUlK5ivNc3IY4/iMXH8K78yjOLmWWwrMg2lcLZA/Om2lCNjCusuwVpW0eAswoJbZ9PPQW1zhWHKadUNBwA4relhMg8fl8Btc80mpuPpCb0/M+CPt1CIqNonSWjiL8dhpaTxVWz391UTWN/Ov2QAAAA==);
+}
+
+main {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+.flex {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fixed {
+    position:fixed;
+}
+
+
+.modal {
+    position:relative;
+    top:0;
+    left:0;
+    z-index:45;
+}
+label.which {
+    padding:10px;
+    cursor:pointer;
+}
+label.which:hover {
+    background-color: #22222277;
+    color:white;
+}
+canvas {
+    position:absolute;
+    top:0;
+    left:0;
+}
+ul {
+    list-style-type: none;
+}
+#type {
+    position:fixed;
+    top:0;
+    left:0;
+    display:flex;
+    width:100vw;
+    justify-content: center;
+    padding:10px 0;
+    z-index:10;
+}
+#modal-QRC {
+    width: 288px;
+    height: 288px;
+    margin: 20px 0 20px;
+    box-shadow: 0 0 10px #222;
+}
+input,select,button {
+    margin:5px;
+}
+input[type=color] {
+    background:none;
+    border:none;
+    cursor: pointer;
+    height:2rem;
+    width:2rem;
+    padding:0;
+}
+input[type=radio] {
+    display:none;
+}
+input[type=radio]:checked ~ label  {
+    background: #222;
+    color:white;
+}
+:focus {
+    outline:3px solid #777;  
+}
+.hide {
+    display:none;
+}
+#palette {
+    position:fixed;bottom:5vh;left:0;width:40px;height:40px;margin:15px 20px 25px;cursor:pointer;
+    fill:#222;
+    z-index:100;
+}
+#data {
+    width:50px;height:50px;cursor:pointer;fill:#222
+}
+.light {
+    fill:white !important;
+}
+#settings {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color: #222;
+    color:white;
+    z-index:50;
+}
+#extension {
+    position:fixed;bottom:0;right:0;
+}
+#extension > ul {
+    flex-direction: row;
+}
+@media only screen and (max-width: 768px)  {
+    * {
+        font-size:.9rem;
+    }
+    svg {
+        transform:scale(.9);
+    }
+}
+@media only screen and (max-width: 480px)  {
+    * {
+        font-size:.8rem;
+    }
+    svg {
+        transform:scale(.8);
+    }
+}
