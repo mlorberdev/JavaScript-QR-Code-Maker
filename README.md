@@ -7,9 +7,9 @@ This QR code generator accepts images and styles, and can make types: VCard, iCa
 ## Screenshots
 
 ### Main
-![main](./main0.webp)
+![main](./assets/main0.webp)
 ### Settings
-![settings](./main1.webp)
+![settings](./assets/main1.webp)
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[CC BY 3.0 Attribution Required](https://creativecommons.org/licenses/by/3.0/)
