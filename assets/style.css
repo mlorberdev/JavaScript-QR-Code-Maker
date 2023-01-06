@@ -92,16 +92,30 @@ input[type=radio]:checked ~ label  {
 .hide {
     display:none;
 }
+.row {
+    flex-direction: row;
+}
 #palette {
-    position:fixed;bottom:5vh;left:0;width:40px;height:40px;margin:15px 20px 25px;cursor:pointer;
+    cursor:pointer;
     fill:#222;
     z-index:100;
 }
 #data {
-    width:50px;height:50px;cursor:pointer;fill:#222
+    cursor:pointer;
+    fill:#222
 }
 .light {
     fill:white !important;
+}
+#palette.light {
+    position:absolute;
+    left:75vw;
+    bottom:10vw;
+    transition:all .5s linear;
+}
+#data > svg {
+    width:50px;
+    height:50px;
 }
 #settings {
     position:fixed;
