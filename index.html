@@ -50,10 +50,135 @@
 
 
     <!-- MAIN SCREEN -->
-    <main class="flex">
+    <main class="flex column">
+        <!-- DATA ENTRY MODALS -->
+        <article id="qr-type-wrap">
+        
+            <div id="modal-URL" class="modal">
+                <input type="url" id="content" placeholder="Enter URL and click ☑" class="hvr sq">
+            </div>
+        
+            <div id="modal-TEXTAREA" class="modal hide">
+                <textarea id="content-textarea" class="hvr sq" rows="5" cols="60" width="400px"
+                    placeholder="Enter text to encode"></textarea>
+            </div>
+        
+            <div id="modal-VCD" class="modal hide">
+                <table>
+                    <tr>
+                        <td><input type="text" id="fullName" placeholder="Name" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="company" placeholder="Company" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="title" placeholder="Title" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="tel" id="phone" placeholder="Phone" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="email" id="email" placeholder="Email" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="url" id="vc_url" placeholder="Website" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="notes" placeholder="Notes" class="img-light"></td>
+                    </tr>
+                </table>
+            </div>
+        
+            <div id="modal-EVENT" class="modal hide">
+        
+                <table>
+                    <tr>
+                        <td colspan="2"><input type="text" id="summary" placeholder="title of event"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" id="description" placeholder="description of event"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" id="location" placeholder="location of event"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="date" id="datestart" aria-label="date start"></td>
+                        <td><input type="time" step="60" id="timestart" aria-label="time start"></td>
+                    </tr>
+        
+                    <tr>
+                        <td><input type="date" id="dateend" aria-label="date end"></td>
+                        <td><input type="time" step="60" id="timeend" aria-label="time end"></td>
+                    </tr>
+        
+                </table>
+            </div>
+        
+            <div id="modal-WIFI" class="modal hide">
+                <table>
+                    <tr>
+                        <td><input type="text" id="ssid" placeholder="network name | SSID" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="password" placeholder="password" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="encryption" title="encryption" aria-label="encryption">
+                                <option value="WPA" selected>WPA</option>
+                                <option value="WPA2">WPA2</option>
+                                <option value="WEP">WEP</option>
+                                <option value="NONE">none</option>
+                            </select>
+                            <span class="lbl">encryption</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="hidden" title="hidden" aria-label="hidden">
+                                <option value="1">true</option>
+                                <option value="0" selected>false</option>
+                            </select>
+                            <span class="lbl">hidden</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        
+            <div id="modal-Email" class="modal hide">
+                <table>
+                    <tr>
+                        <td>Not all email clients will populate the subject and body</td>
+                    </tr>
+                    <tr>
+                        <td><input type="email" id="mailTo" placeholder="Email Address" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="mailSubj" placeholder="Subject (optional)" class="img-light"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="mailMsg" placeholder="Message (optional)" class="img-light"></td>
+                    </tr>
+                </table>
+            </div>
+        
+            <div id="modal-SMS" class="modal hide">
+                <table>
+                    <tr>
+                        <td><input type="tel" id="sendTo" placeholder="Send to number (optional)" class="img-light">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="sendMsg" placeholder="Message (optional)" class="img-light"></td>
+                    </tr>
+                </table>
+            </div>
+        
+        
+        </article>
 
         <!-- QR CODE WRAPPER -->
-        <article class="flex">
+        <article id="qr_main_wrap" class="flex">
             <div id="data" class="flex row constructor-clear clickable">
                 <svg id="palette" tabindex="0" class="clickable" tabindex="0" viewBox="0 0 512 512">
                     <path
@@ -100,7 +225,7 @@
                 </li>
                 <li>
                     <div id="download" class="clickable" tabindex="0">
-                        <svg viewBox="0 0 96 96" style="width:50px;height:50px;margin:20px;cursor:pointer;fill:#222">
+                        <svg viewBox="0 0 96 96" style="width:35px;height:35px;margin:20px;cursor:pointer;fill:#4ff1f7;transform:scale(.8)">
                             <g>
                                 <path
                                     d="M90,54a5.9966,5.9966,0,0,0-6,6V78H12V60A6,6,0,0,0,0,60V84a5.9966,5.9966,0,0,0,6,6H90a5.9966,5.9966,0,0,0,6-6V60A5.9966,5.9966,0,0,0,90,54Z" />
@@ -111,132 +236,6 @@
                     </div>
                 </li>
             </ul>
-
-        </article>
-
-        <!-- DATA ENTRY MODALS -->
-        <article id="qr-type-wrap">
-
-            <div id="modal-URL" class="modal">
-                <input type="url" id="content" placeholder="Enter URL to encode" class="hvr sq">
-            </div>
-
-            <div id="modal-TEXTAREA" class="modal hide">
-                <textarea id="content-textarea" class="hvr sq" rows="5" cols="60" width="400px"
-                    placeholder="Enter text to encode"></textarea>
-            </div>
-
-            <div id="modal-VCD" class="modal hide">
-                <table>
-                    <tr>
-                        <td><input type="text" id="fullName" placeholder="Name" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="company" placeholder="Company" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="title" placeholder="Title" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="tel" id="phone" placeholder="Phone" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="email" id="email" placeholder="Email" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="url" id="vc_url" placeholder="Website" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="notes" placeholder="Notes" class="img-light"></td>
-                    </tr>
-                </table>
-            </div>
-
-            <div id="modal-EVENT" class="modal hide">
-
-                <table>
-                    <tr>
-                        <td colspan="2"><input type="text" id="summary" placeholder="title of event"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="text" id="description" placeholder="description of event"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="text" id="location" placeholder="location of event"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="date" id="datestart" aria-label="date start"></td>
-                        <td><input type="time" step="60" id="timestart" aria-label="time start"></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="date" id="dateend" aria-label="date end"></td>
-                        <td><input type="time" step="60" id="timeend" aria-label="time end"></td>
-                    </tr>
-
-                </table>
-            </div>
-
-            <div id="modal-WIFI" class="modal hide">
-                <table>
-                    <tr>
-                        <td><input type="text" id="ssid" placeholder="network name | SSID" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="password" placeholder="password" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <select id="encryption" title="encryption" aria-label="encryption">
-                                <option value="WPA" selected>WPA</option>
-                                <option value="WPA2">WPA2</option>
-                                <option value="WEP">WEP</option>
-                                <option value="NONE">none</option>
-                            </select>
-                            <span class="lbl">encryption</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <select id="hidden" title="hidden" aria-label="hidden">
-                                <option value="1">true</option>
-                                <option value="0" selected>false</option>
-                            </select>
-                            <span class="lbl">hidden</span>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div id="modal-Email" class="modal hide">
-                <table>
-                    <tr>
-                        <td>Not all email clients will populate the subject and body</td>
-                    </tr>
-                    <tr>
-                        <td><input type="email" id="mailTo" placeholder="Address" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="mailSubj" placeholder="Subject (optional)" class="img-light"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="mailMsg" placeholder="Message (optional)" class="img-light"></td>
-                    </tr>
-                </table>
-            </div>
-
-            <div id="modal-SMS" class="modal hide">
-                <table>
-                    <tr>
-                        <td><input type="tel" id="sendTo" placeholder="Send to number (optional)" class="img-light">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="sendMsg" placeholder="Message (optional)" class="img-light"></td>
-                    </tr>
-                </table>
-            </div>
-
 
         </article>
 
